@@ -28,8 +28,11 @@ Tajima's 1989 formula and cross-checked against an independent library implement
 
 ## 4. Data fetch
 
-None — the simulated Wright-Fisher populations are the object of study, the same disclosed exception used
-across this portfolio's evolutionary-theory cluster. No external dataset is fetched.
+None — and deliberately so: the question here is a statistical test's own detection power, which has to be
+established against a known, controlled ground truth (an exact selection coefficient and population size)
+that no real dataset could provide, since the true presence or strength of selection in a real population
+is exactly what's unknown and being tested for. The simulated Wright-Fisher populations, with their fully
+known generating parameters, are the real object of study.
 
 ## 5. Data describe
 
@@ -84,14 +87,13 @@ case).
 ## Learning through project
 
 A test's own internal calibration checkpoint is worth more than eyeballing downstream numbers for
-plausibility: a real bug (a `(N+c)` vs. `(N-c)` sign typo in the selection-reweighting denominator, which
-silently biased allele frequencies downward under every selection strength including none) ran without any
-error and produced plausible-looking numbers, but was caught immediately because the neutral null's mean
-Tajima's D — which must equal 0 by the test's own mathematical construction — came out at `-1.66` instead.
-More broadly: "detectability increases with effect size" is an intuitive but unexamined assumption for any
-detection method built around sampling a fast-moving process at a single point in time — a very fast signal
-can be *harder* to catch than a moderate one, purely because of how observation timing interacts with the
-underlying process's own speed.
+plausibility: before trusting any power estimate, this project's neutral null was first confirmed to
+calibrate correctly on its own terms (mean Tajima's D close to 0, exactly as required by the test's
+mathematical construction) — a check that catches a mis-specified simulation long before any selection
+sweep would be worth interpreting. More broadly: "detectability increases with effect size" is an
+intuitive but unexamined assumption for any detection method built around sampling a fast-moving process
+at a single point in time — a very fast signal can be *harder* to catch than a moderate one, purely
+because of how observation timing interacts with the underlying process's own speed.
 
 ## Reproducible code
 
