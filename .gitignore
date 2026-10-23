@@ -1,0 +1,15 @@
+# Private, git-ignored per this portfolio's convention -- learning files, not published
+WORKFLOW.md
+PROJECT_NARRATIVE.md
+INTERVIEW_QA.md
+INTERPRETATION.md
+
+# Blank/hint teaching scaffold -- the clean, filled-in notebook (once he's written his own code
+# and results exist) is what gets pushed
+neutral_theory_selection_detectability_blank.ipynb
+
+# Standard
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
